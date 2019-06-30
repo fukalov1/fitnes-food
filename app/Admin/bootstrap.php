@@ -14,8 +14,18 @@
  *
  * Or require js and css assets:
  * Admin::css('/packages/prettydocs/css/styles.css');
- * Admin::js('/packages/prettydocs/js/main.js');
  *
  */
 
-Encore\Admin\Form::forget(['map', 'editor']);
+Admin::js('/js/custom.js');
+
+
+use Encore\Admin\Form;
+//use App\Admin\Extensions\Form\CKEditor;
+use App\Admin\Extensions\Form\Field\MyResizeImage;
+use App\Admin\Extensions\Form\Field\TextTranslate;
+
+//Form::extend('ckeditor', CKEditor::class);
+Form::extend('translate', TextTranslate::class);
+Form::extend('myimage', MyResizeImage::class);
+
