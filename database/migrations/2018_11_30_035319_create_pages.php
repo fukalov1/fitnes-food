@@ -20,6 +20,7 @@ class CreatePages extends Migration
             $table->string('description')->nullable();
             $table->string('keywords')->nullable();
             $table->string('url')->nullable();
+            $table->string('redirect')->nullable();
             $table->boolean('relation')->default(false);
             $table->string('name');
             $table->string('image')->nullable();
