@@ -17,5 +17,7 @@ Route::group([
     $router->resource('mailforms', MailFormController::class)->middleware('set_page_block');
     $router->resource('mailform_fields', MailFormFieldController::class)->middleware('set_mailform');
     $router->get('remove_photo', 'PageBlockController@removePhoto');
+    $router->resource('goods', GoodController::class);
+
 
 });
