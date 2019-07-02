@@ -25,12 +25,6 @@
         </div>
     </div>
 
-    <div class="breadcrumbs">
-        <div class="container">
-            {!! $bread_crumbs !!}
-        </div>
-    </div>
-
 
 
     @foreach($page_blocks as $page_block)

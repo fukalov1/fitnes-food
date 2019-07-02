@@ -1,21 +1,49 @@
-<section id="footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-9">
-                <div class="footer-contact">
-                    <a href="" class="ft1">{{ config('phone') }}</a>
-                    <a href="" class="ft2">{{ config('email') }}</a>
-                    <span>{{ config('address') }}</span>
+
+<footer>
+    <div class="footer-navig">
+        <ul>
+            <li><a href="">Товары</a></li>
+            <li><a href="">О компании</a></li>
+            <li><a href="">Контакты</a></li>
+        </ul>
+    </div>
+    <div class="header-main">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 d-none d-lg-block">
+                    <div class="header-main-submit">
+                        <a href="">Оставить <br>заявку</a>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-3">
-                <div class="fot-ln">
-                    <a href="" target="_blank"><i class="fab fa-vk"></i></a>
-                    <a href="" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a href="" target="_blank"><i class="fab fa-twitter"></i></a>
-                    <br/><a href="http://old.ctrtlt.ru">Старая версия сайта</a>
+                <div class="col-lg-4">
+                    <div class="logo">
+                        <img src="{{ asset('images/logo.png') }}" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-4 d-none d-lg-block">
+                    <div class="phone-header">
+                        <a href="mailto:{{ config('phone') }}" class="ph1">{{ config('phone') }}</a>
+                        <p>ПН-ПТ: с 8:00 до 17:00</p>
+                        <a href="" class="ph2">Заказать звонок</a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</section>
+    <div class="header-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="header-top-left">
+                        Сырье для производства максимально полезных продуктов
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="header-top-right">
+                        {{ config('address') }}   |   <a href="mailto:{{ config('email') }}">{{ config('email') }}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

@@ -116,6 +116,7 @@
       <path value="$PROJECT_DIR$/vendor/laravel-admin-ext/ckeditor" />
       <path value="$PROJECT_DIR$/vendor/laravel-admin-ext/log-viewer" />
       <path value="$PROJECT_DIR$/vendor/laravel-admin-ext/media-manager" />
+      <path value="$PROJECT_DIR$/vendor/graham-campbell/guzzle-factory" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.1" />

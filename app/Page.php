@@ -2,7 +2,6 @@
 
 namespace App;
 use App\PageBlock;
-use App\CenterNew;
 use Illuminate\Database\Eloquent\Model;
 
 class Page extends Model
@@ -23,14 +22,6 @@ class Page extends Model
         return Page::where('parent_id', 0)->where('order', '>', 0)->get()->sortBy('order');
     }
 
-    public function news()
-    {
-        return $this->hasMany(CenterNew::class)->orderBy('date', 'desc')->limit(4);
-    }
 
-    public function allnews()
-    {
-        return $this->hasMany(CenterNew::class)->orderBy('date', 'desc');
-    }
 
 }

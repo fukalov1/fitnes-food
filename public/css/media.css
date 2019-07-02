@@ -1,0 +1,189 @@
+/*==========  Desktop First Method  ==========*/
+@media only screen and (max-width : 1450px) {
+	.main-page-item-desc{
+		min-height: auto;
+	}
+	.main-page-item h3{
+		font-size: 21px;
+	}
+
+}
+
+}
+@media only screen and (max-width : 1350px) {
+
+}
+@media only screen and (max-width : 1300px) {
+}
+@media only screen and (max-width : 1199px) {
+	.header-top-right{
+		font-size: 14px;
+	}
+	.main-page-item{
+		padding: 20px;
+	}
+	.header-top-left {
+    	font-size: 14px;
+	}
+	.container-custom{
+	    max-width: 960px;	
+	}
+	.main-page-item h3 {
+	    font-size: 18px;
+	}
+}	
+
+@media only screen and (max-width : 991px) {
+	.container-custom{
+	    max-width: 750px;	
+	}
+	.container-custom .row{
+		justify-content: center;
+	}
+	.main-page-item{
+		margin-bottom: 20px;
+	}
+	header .header-top{
+		display: none;
+	}
+	.header-top{
+		height: auto;
+		padding: 15px 0px;
+		text-align: center;
+	}
+	.header-top-left{
+		float: none;
+		padding-top: 0;
+	}
+	.header-top-right{
+		float: none;
+		padding-top: 7px;
+	}
+	.goods-page-item h2{
+		font-size: 21px;
+	}
+	.goods-page-item h3{
+		font-size: 21px;
+	}
+	.about-page-main{
+		padding: 0px;
+	}
+	header .logo{
+		padding-top: 20px;
+	}
+	.contact-maps{
+		height: 400px;
+	}
+}
+@media only screen and (max-width : 767px) {
+	.header-top-left{
+		font-size: 12px;
+	}
+	.header-top-right{
+		font-size: 12px;
+		padding-top: 5px;
+	}
+	.main-page-item{
+		min-height: auto;
+	}
+	.main-page__more{
+		opacity: 1;
+		margin-top: 20px;
+	}
+	.main-page-item-desc p{
+		padding-bottom: 0;
+	}
+	.main-page-item-application h5, .main-page-item-desc h5{
+		padding: 10px 0px;
+	}
+	.main-page-item h3{
+		min-height: inherit;
+	}
+	.goods-page-item{
+		padding: 30px 20px;
+	}
+	.goods-page-item h2, .goods-page-item h3, .about-page-item h2, .contact-page-item h2{
+		margin-left: 0px;
+		margin-top: 0px;
+		width: 100%;
+		font-size: 18px;
+	}
+	.goods-page-item h2, .about-page-item h2, .contact-page-item h2{
+		margin-bottom: 15px;
+		text-align: center;
+	}
+	.goods-page-main, .about-page-main, .contact-page-main{
+		padding: 0;
+		height: auto;
+	}
+	.goods-page-item, .about-page-item, .contact-page-item{
+		height: auto;
+		background-size: cover;
+		padding: 20px;
+		margin-bottom: 20px;
+	}
+	.contact-maps{
+		height: 350px;
+	}
+}	
+
+@media only screen and (max-width : 550px) {
+	footer .logo{
+		padding-top: 15px;
+	}
+	footer .header-main{
+		padding-bottom: 15px;
+	}
+	.footer-navig li a, .header-navig li a{
+		font-size: 16px;
+		padding: 14px;
+	}
+	.header-navig{
+		margin-top: 15px;
+	}
+	.phone-header a.ph1{
+		font-size: 21px;
+	}
+	.phone-header p{
+		padding: 0px;
+	}
+	.header-main-submit{
+		margin-left: 55px;
+		font-size: 16px;
+		margin-top: 20px;
+	}
+	.phone-header{
+		padding-top: 15px;
+	}
+	.logo{
+		padding-top: 15px;
+	}
+	.about-page-form-item{
+		width: 275px;
+	}
+	.about-page-form-item h3{
+		font-size: 21px;
+		padding-bottom: 15px;
+	}
+	.form-check{
+		font-size: 12px;
+	}
+	.about-page-form{
+		padding-bottom: 20px;
+	}
+	.about-page-form-item button{
+		height: 45px;
+		line-height: 45px;
+	}
+	.contact-maps{
+		height: 300px;
+	}
+}
+@media only screen and (max-width : 350px) {
+	.phone-header a.ph1 {
+    	font-size: 18px;
+	}
+	.phone-header p{
+		font-size: 12px;
+	}
+}
