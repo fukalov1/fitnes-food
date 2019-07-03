@@ -224,14 +224,16 @@ class PageBlockController extends Controller
 
     private function getBeadCrumbs($id)
     {
-        $page = Page::find($id);
-        $url = "/admin/sub_pages?set={$page->id}";
-        if (!$page->relation)
-            $url = "/admin/page_blocks?set={$page->id}";
-        $this->bread_crubs = " <a href='$url'>".$page->name."</a> / ".$this->bread_crubs;
+        if ($id!='') {
+            $page = Page::find($id);
+            $url = "/admin/sub_pages?set={$page->id}";
+            if (!$page->relation)
+                $url = "/admin/page_blocks?set={$page->id}";
+            $this->bread_crubs = " <a href='$url'>" . $page->name . "</a> / " . $this->bread_crubs;
 
-        if (($page->parent_id>0) and (Admin::user()->isAdministrator()) ) {
-            $this->getBeadCrumbs($page->parent_id);
+            if (($page->parent_id > 0) and (Admin::user()->isAdministrator())) {
+                $this->getBeadCrumbs($page->parent_id);
+            }
         }
     }
 

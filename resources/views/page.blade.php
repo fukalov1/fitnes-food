@@ -28,39 +28,7 @@
 
 
     @foreach($page_blocks as $page_block)
-        @if($loop->iteration==2)
-            @if ($data->news_branch)
-                <section id="developments">
-                    <div class="container">
-                        <h2 id="news{{ $data->id }}">Главные события</h2>
-                        <div class="row">
-                            @foreach($data->news as $item)
-                                <div class="col-md-4 col-lg-3">
-                                    <div class="developments-item">
-                                        <div class="developments-img">
-                                            <img src="/uploads/images/thumbnail/{{ $item->image }}" alt="{{ $item->name }}">
-                                            <div class="developments-abs">
-                                                <div class="developments-abs-top">
-                                                    <h3>{{ $item->name }}</h3>
-                                                    <p><a href="/news/{{$item->id}}">{{ $item->anons }}</a></p>
-                                                </div>
-                                                <div class="developments-date">
-                                                    <div>{{ $item->date }}</div>
-                                                    <div>{{ $item->show }}</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endforeach
-                        </div>
-                        <div class="developments-more">
-                            <a href="/news/all/{{ $data->id }}">Все новости </a>
-                        </div>
-                    </div>
-                </section>
-            @endif
-        @endif
+
         @if($page_block->type == '1')
             <section class="page-block" id="block{{$page_block->id}}">
                 <div class="container">
