@@ -79,7 +79,7 @@ body .p0{
 }
 .text-right{
 	text-align: right;
-}	
+}
 .over{
 	overflow: hidden;
 }
@@ -141,7 +141,7 @@ a{
 	float: left;
 	color: #000b3c;
     padding-top: 15px;
-    font-weight: 500;	
+    font-weight: 500;
 }
 .header-top-right{
 	float: right;
@@ -154,7 +154,7 @@ a{
 	color: #3375d5;
 }
 .logo{
-    padding-top: 27px;	
+    padding-top: 27px;
 	text-align: center;
 }
 .header-main-submit{
@@ -179,7 +179,7 @@ a{
 }
 .phone-header{
 	text-align: right;
-    padding-top: 21px;	
+    padding-top: 21px;
 }
 .phone-header p{
 	padding: 4px 0px;
@@ -200,8 +200,8 @@ a{
 	height: 50px;
 	background-color: #3375d5;
     margin-top: 25px;
-    text-align: center;	
-    margin-bottom: 15px;    
+    text-align: center;
+    margin-bottom: 15px;
 }
 .header-navig ul{
 	display: inline-block;
@@ -246,16 +246,25 @@ a{
 }
 .main-page-item h3{
 	font-size: 24px;
-	min-height: 110px;
+	min-height: 44px;
 	font-weight: 500;
 }
 .main-page-item h3 span{
 	display: block;
 	background-color: #ffffff;
-	display: inline-block;	
+	/*display: inline-block;*/
 	margin-bottom: 12px;
     padding: 8px 12px;
 }
+
+.main-page-item h3 {
+	display: block;
+	background-color: #ffffff;
+	display: inline-block;
+	margin-bottom: 12px;
+    padding: 8px 12px;
+}
+
 .main-page-item-desc h5{
 	color:#fff;
 	font-weight: 500;
@@ -322,7 +331,7 @@ a{
 	text-transform: uppercase;
 	font-weight: 400;
     padding-top: 23px;
-    padding-bottom: 25px;	
+    padding-bottom: 25px;
 }
 .about-page-form-item input{
 	height: 50px;
@@ -330,7 +339,7 @@ a{
 	border: 1px solid #3f4967;
 	background: none;
 	width: 100%;
-    margin-bottom: 18px;	
+    margin-bottom: 18px;
     text-align: center;
     font-size: 18px;
 }
@@ -357,7 +366,7 @@ input[type=checkbox] + label:before {
     color: transparent;
     display: inline-block;
     border: 1px solid #000;
-    font-size: 20px;    
+    font-size: 20px;
     line-height: 22px;
     margin: -5px 5px 0 0;
     height: 25px;
@@ -383,7 +392,7 @@ input[type=checkbox]:checked + label:before {
 	height: 50px;
 	background-color: #f7f7f7;
     margin-top: 25px;
-    text-align: center;	
+    text-align: center;
 }
 .footer-navig ul{
 	display: inline-block;
@@ -497,7 +506,7 @@ footer .header-main{
 }
 .main-page-item:hover:before{
 	background: rgba(0,0,0,0.8);
-} 
+}
 .main-page-item:hover a.main-page__more{
 	opacity: 1;
 }
