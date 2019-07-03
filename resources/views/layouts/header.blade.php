@@ -26,7 +26,7 @@
                 </div>
                 <div class="col-lg-4 order-3 order-lg-2">
                     <div class="logo">
-                        <img src="{{ asset('images/logo.png') }}" alt="">
+                        <a href="/" title="на главную страницу"><img src="{{ asset('images/logo.png') }}" alt="на главную страницу"></a>
                     </div>
                 </div>
                 <div class="col-7 col-lg-4 order-2 order-lg-3">
