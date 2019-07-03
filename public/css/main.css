@@ -442,7 +442,7 @@ footer .header-main{
 .contact-maps{
 	height: 485px;
 }
-#contact-page{
+#contact-page, .page-block {
 	padding-bottom: 40px;
 }
 

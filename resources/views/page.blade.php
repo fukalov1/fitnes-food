@@ -30,12 +30,12 @@
     @foreach($page_blocks as $page_block)
 
         @if($page_block->type == '1')
-            <section class="page-block" id="block{{$page_block->id}}">
-                <div class="container">
+            {{--<section class="page-block" id="block{{$page_block->id}}">--}}
+                {{--<div class="container">--}}
                     <h1>{{ $page_block->header }}</h1>
                     {!! $page_block->text !!}
-                </div>
-            </section>
+                {{--</div>--}}
+            {{--</section>--}}
         @elseif($page_block->type=='2')
             <div class="blo-photo" id="block{{$page_block->id}}">
                 <div class="container pos-r">
