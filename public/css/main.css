@@ -315,7 +315,7 @@ a{
 	padding-bottom: 21px;
 }
 .about-page-main p{
-	padding-bottom: 22px;
+	padding-bottom: 0;
 }
 .about-page-form{
 	min-height: 339px;
