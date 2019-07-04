@@ -205,6 +205,17 @@ class PageBlockController extends Controller
                     'language' => 'ru',
                     'height' => 500
                 ])->default('-');
+
+        $form->ckeditor('text1', 'Вторая колонка')
+            ->options(
+                [
+                    'filebrowserBrowseUrl' =>  '/ckfinder/browser',
+                    'filebrowserImageBrowseUrl' =>  '/ckfinder/browser',
+                    'filebrowserUploadUrl' => '/ckfinder/browser?type=Files',
+                    'filebrowserImageUploadUrl' => '/ckfinder/browser?command=QuickUpload&type=Images',
+                    'language' => 'ru',
+                    'height' => 500
+                ])->default('-');
 //        $form->myresizeimage('image', 'Фото');
 //        $form->image('image', 'Фото');
 

@@ -3,27 +3,27 @@
 
 @section('content')
 
-    <div class="navig-bottom-height">
-        <div class="navig-bottom default-menu" id="menu">
-            <div class="container">
-                <div class="go-top-top">
-                    <a href="#top-header"></a>
-                </div>
-                <ul>
-                    @foreach($page_blocks as $page_block)
-                        @if($loop->iteration==2)
-                            @if ($data->news_branch)
-                                <li><a href="#news{{ $data->id }}" class="anchor">Главные события</a></li>
-                            @endif
-                        @endif
-                        @if($page_block->header!='' and $page_block->submenu)
-                            <li><a href="#block{{ $page_block->id }}" class="anchor">{{ $page_block->header }}</a></li>
-                        @endif
-                    @endforeach
-                </ul>
-            </div>
-        </div>
-    </div>
+    {{--<div class="navig-bottom-height">--}}
+        {{--<div class="navig-bottom default-menu" id="menu">--}}
+            {{--<div class="container">--}}
+                {{--<div class="go-top-top">--}}
+                    {{--<a href="#top-header"></a>--}}
+                {{--</div>--}}
+                {{--<ul>--}}
+                    {{--@foreach($page_blocks as $page_block)--}}
+                        {{--@if($loop->iteration==2)--}}
+                            {{--@if ($data->news_branch)--}}
+                                {{--<li><a href="#news{{ $data->id }}" class="anchor">Главные события</a></li>--}}
+                            {{--@endif--}}
+                        {{--@endif--}}
+                        {{--@if($page_block->header!='' and $page_block->submenu)--}}
+                            {{--<li><a href="#block{{ $page_block->id }}" class="anchor">{{ $page_block->header }}</a></li>--}}
+                        {{--@endif--}}
+                    {{--@endforeach--}}
+                {{--</ul>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</div>--}}
 
 
 
@@ -32,193 +32,33 @@
         @if($page_block->type == '1')
             {{--<section class="page-block" id="block{{$page_block->id}}">--}}
                 {{--<div class="container">--}}
-                    <h1>{{ $page_block->header }}</h1>
-                    {!! $page_block->text !!}
+                    {{--<h1>{{ $page_block->header }}</h1>--}}
+
                 {{--</div>--}}
             {{--</section>--}}
-        @elseif($page_block->type=='2')
-            <div class="blo-photo" id="block{{$page_block->id}}">
-                <div class="container pos-r">
-                    <h3>{{ $page_block->header }}</h3>
-                    <div class="blo-photo-item">
-                        <img src="/uploads/{{ $page_block->image }}" alt="{{ $page_block->header }}">
-                    </div>
-                    <div class="blo-photo-txt">
-                        {!! $page_block->text !!}
+            <div class="container">
+                <div class="about-page-item">
+                    <h2>{{ $page_block->header }}</h2>
+                </div>
+
+                <div class="about-page-main">
+                    <div class="row">
+                        @if($page_block->text1!='' and $page_block->text1!='<p>-</p>')
+                            <div class="col-md-6">
+                                {!! $page_block->text !!}
+                            </div>
+                            <div class="col-md-6">
+                                {!! $page_block->text1 !!}
+                            </div>
+                        @else
+                            <div class="col-md-12">
+                                {!! $page_block->text !!}
+                            </div>
+                        @endif
                     </div>
                 </div>
             </div>
-        @elseif($page_block->type=='3')
-            <section class="promo" id="block{{$page_block->id}}">
-                <div class="container">
-                    <h3>{{ $page_block->header }}</h3>
-                    {!! $page_block->text !!}
-                </div>
-            </section>
-        @elseif($page_block->type=='4')
-            <section class="page-block-doc" id="block{{$page_block->id}}">
-                <div class="container">
-                    <h1>{{ $page_block->header }}</h1>
-                    {!! $page_block->text !!}
-                </div>
-            </section>
-        @elseif($page_block->type=='5')
-            <section class="page-block-link" id="block{{$page_block->id}}">
-                <div class="container">
-                    <h1>{{ $page_block->header }}</h1>
-                    {!! $page_block->text !!}
-                </div>
-            </section>
-        @elseif($page_block->type=='6')
-            <section class="page-block-pdf" id="block{{$page_block->id}}">
-                <div class="container">
-                    <h1>{{ $page_block->header }}</h1>
-                    {!! $page_block->text !!}
-                </div>
-            </section>
-        @elseif($page_block->type=='7')
-            <section class="page-block">
-                <div class="container">
-                    @foreach($page_block->sliders as $slider)
-                    <div id="my-slider" class="my-slider">
-                        @foreach($slider->items as $item)
-                        <div class="slide">
-                            <div class="slide-image" style="background: url('/uploads/{{ $item->image }}')">
-                                <div class="slide-title">
-                                    <h3>
-                                        <a href="{{ $item->url }}" target="_blank">
-                                        {{ $item->title }}
-                                        </a>
-                                    </h3>
-                                </div>
-                                {{--<a href="{{ $item->url }}" target="_blank">--}}
-                                {{--<img--}}
-                                        {{--src="" alt="{{ $item->title }}"/>--}}
-                            {{--</a>--}}
 
-                            </div>
-                        </div>
-                        @endforeach
-                    </div>
-                    @endforeach
-
-                    {{--<div id="shadow" class="shadow"></div>--}}
-
-                    {{--<div id="nav-arrows" class="nav-arrows">--}}
-                        {{--<a href="#">Next</a>--}}
-                        {{--<a href="#">Previous</a>--}}
-                    {{--</div>--}}
-                </div>
-            </section>
-        @elseif($page_block->type=='8')
-            <section class="page-block" id="block{{$page_block->id}}">
-                {!! $page_block->text !!}
-            </section>
-        @elseif($page_block->type=='12')
-            <section class="answer"  id="block{{$page_block->id}}">
-                <div class="container">
-                    <h2>{{ $page_block->header }}</h2>
-                    {!! $page_block->text !!}
-                    @foreach($page_block->quest_blocks as $quest_block)
-                    {{--<div id="accordion">--}}
-                        {{--@foreach($quest_block->questions as $question)--}}
-                        {{--@if($question->hide==0)--}}
-                        {{--<h3>{{ $question->quest }}</h3>--}}
-                        {{--<div>--}}
-                            {{--<p>--}}
-                                {{--{{ $question->response }}--}}
-                            {{--</p>--}}
-                        {{--</div>--}}
-                        {{--@endif--}}
-                        {{--@endforeach--}}
-                    {{--</div>--}}
-                        <div id="accordion">
-                            @foreach($quest_block->questions as $question)
-                                @if($question->hide==0)
-                            <div class="card">
-                                <div class="card-header">
-                                    <a class="card-link" data-toggle="collapse" href="#collapse{{ $question->id }}" title="расркрыть вопрос и показать ответ">
-                                        {{ $question->quest }}
-                                    </a>
-                                </div>
-                                @if ($loop->first)
-                                <div id="collapse{{ $question->id }}" class="collapse show" data-parent="#accordion">
-                                    <div class="card-body">
-                                        {{ $question->response }}
-                                    </div>
-                                </div>
-                                @else
-                                    <div id="collapse{{ $question->id }}" class="collapse" data-parent="#accordion">
-                                        <div class="card-body">
-                                            {{ $question->response }}
-                                        </div>
-                                    </div>
-                                @endif
-                            </div>
-                                @endif
-                            @endforeach
-                        </div>
-
-                        </div>
-                        @if($quest_block->hide==1)
-                        <section class="mail-form">
-                            <div class="container form-area{{ $quest_block->id }}">
-
-                                <h2>Задайте свой вопрос</h2>
-                                <form id="sendquest{{ $quest_block->id }}" class="send-quest" method="post">
-                                    {{ csrf_field() }}
-                                    <div class="form-inp">
-                                            <input type="text" class="field" rel="fio"
-                                                   id="fio{{ $quest_block->id }}"
-                                                   name="fio" placeholder="ФИО">
-                                            <input type="text" class="field" rel="email"
-                                                   id="email{{ $quest_block->id }}"
-                                                   name="email" placeholder="E-mail">
-                                    </div>
-                                    <div class="form-textarea">
-                                    <textarea name="message{{ $quest_block->id }}" id="message{{ $quest_block->id }}"
-                                              placeholder="Ваш вопрос"></textarea>
-                                    </div>
-                                    <div class="text-center">
-                                        <button type="button" class="submit-quest" rel="{{ $quest_block->id }}">Отправить</button>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                    <input type="hidden" name="uid" value="{{ $quest_block->id }}">
-                                </form>
-
-                            </div>
-                        </section>
-                        @endif
-                    @endforeach
-                </div>
-            </section>
-        @elseif($page_block->type=='9')
-            @foreach($page_block->photosets as $photoset)
-                    <section id="photo-gallery">
-                        <div class="container" id="block{{ $page_block->id }}">
-                            <h2>{{ $photoset->name }}</h2>
-                            <div class="row">
-                                @foreach($photoset->photos as $photo)
-                                    <div class="col-md-6 col-lg-4">
-                                        <div class="photo-gallery-item">
-                                            <a href="/uploads/images/{{$photo->image}}" class="modalbox"><img
-                                                        src="images/search.png" alt=""></a>
-                                            <img src="/uploads/images/thumbnail/{{$photo->image}}" alt="">
-                                            <div class="title">
-                                                {{ $photo->name }}
-                                            </div>
-                                            @if($photo->text!='')
-                                                <div class="title">
-                                                    {{ $photo->text }}
-                                                </div>
-                                            @endif
-                                        </div>
-                                    </div>
-                                @endforeach
-                            </div>
-                        </div>
-                    </section>
-            @endforeach
         @elseif($page_block->type=='10')
             @foreach($page_block->mail_forms as $item)
                     <section class="mail-form" id="block{{ $page_block->id }}">
