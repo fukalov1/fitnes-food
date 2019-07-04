@@ -240,6 +240,9 @@ a{
     margin-left: auto;
     max-width: 1920px;
 }
+.container-custom p {
+	line-height: 0;
+}
 .container-custom .col-md-4{
 	padding-left: 7px;
 	padding-right: 7px;
