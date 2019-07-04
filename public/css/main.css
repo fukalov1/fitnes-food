@@ -311,7 +311,7 @@ a{
 	line-height: 22px;
 	padding: 0px 32px;
 }
-.about-page-main h4{
+.about-page-main h3, .about-page-main h4 {
 	padding-bottom: 21px;
 }
 .about-page-main p{
