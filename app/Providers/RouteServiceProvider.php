@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Routing\Router;
 use App\Page;
+use App\Good;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
@@ -42,8 +43,6 @@ class RouteServiceProvider extends ServiceProvider
         $this->mapWebRoutes();
 
 
-
-
         $router->group(['middleware' => ['web']], function ($router) {
             $pages = Page::all();
             foreach ($pages as $page) {
@@ -53,6 +52,18 @@ class RouteServiceProvider extends ServiceProvider
                         return $this->app->call('App\Http\Controllers\PageController@show',
                             [
                                 'page' => $page,
+                                'parameters' => $router->current()->parameters
+                            ]);
+                    }]);
+            }
+            $goods = Good::all();
+            foreach ($goods as $good) {
+                $router->get($good->url,
+                    [
+                        'as' => $good->route_name, function () use ($good, $router) {
+                        return $this->app->call('App\Http\Controllers\GoodController@show',
+                            [
+                                'good' => $good,
                                 'parameters' => $router->current()->parameters
                             ]);
                     }]);

@@ -2,52 +2,39 @@
 
 namespace App\Http\Controllers;
 use Mail;
+use App\Good;
 use App\Page;
-use App\PageBlock;
 
-class PageController extends Controller
+class GoodController extends Controller
 {
     public $bread_crubs;
 
-    public function __construct(Page $page, PageBlock $pageBlock)
+    public function __construct(Good $good, Page $page)
     {
+        $this->good = $good;
         $this->page = $page;
-        $this->pageBlock = $pageBlock;
-
 //        $this->mailForm = $mailForm;
     }
 
-    public function show(Page $page)
+    public function show(Good $good)
     {
 
-        $template = 'page';
-        $data = ['data' => $page];
-        // Если главная страница
-        if ($page->id == 4) {
-            $template = 'main';
-            $data = [
-                'data' => $page
-            ];
-        }
-
-        $this->getBeadCrumbs($page->id);
+        $template = 'good';
+        $data = ['data' => $good];
         $data['pages'] = $this->page->getMenu();
-        $data['page_blocks'] = $this->pageBlock->where('page_id', $page->id)->orderBy('orders')->get();
 
-//        dd($page->getMenu());
-//dd($template, $page->id,$data);
         return view($template, $data);
     }
 
-    private function getBeadCrumbs($id)
-    {
-        $page = Page::find($id);
-        $this->bread_crubs = " <a href='/{$page->url}'>".preg_replace('/\<br\/\>/','',$page->name)."</a> / ".$this->bread_crubs;
-
-        if ($page->parent_id>0) {
-            $this->getBeadCrumbs($page->parent_id);
-        }
-    }
+//    private function getBeadCrumbs($id)
+//    {
+//        $good = Good::find($id);
+//        $this->bread_crubs = " <a href='/{$good->url}'>".preg_replace('/\<br\/\>/','',$good->name)."</a> / ".$this->bread_crubs;
+//
+//        if ($good->parent_id>0) {
+//            $this->getBeadCrumbs($good->parent_id);
+//        }
+//    }
 
 //    public function sendFormData($id)
 //    {

@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.103.2",
+            "version": "3.104.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "364192641e880dd0a5c9f1a5852c425709e7159f"
+                "reference": "295706ab2134bf842837fa0b0162ff3aef8b0aa4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/364192641e880dd0a5c9f1a5852c425709e7159f",
-                "reference": "364192641e880dd0a5c9f1a5852c425709e7159f",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/295706ab2134bf842837fa0b0162ff3aef8b0aa4",
+                "reference": "295706ab2134bf842837fa0b0162ff3aef8b0aa4",
                 "shasum": ""
             },
             "require": {
@@ -87,7 +87,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2019-07-01T18:26:54+00:00"
+            "time": "2019-07-03T18:08:50+00:00"
         },
         {
             "name": "ckfinder/ckfinder-laravel-package",
@@ -3128,16 +3128,16 @@
         },
         {
             "name": "spatie/dropbox-api",
-            "version": "1.10.0",
+            "version": "1.11.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/dropbox-api.git",
-                "reference": "af7201a52f9f11080a2d43d56d39c74f2b960ab0"
+                "reference": "47c6a14bcdc639ba90f86f98b2ada38ac9cc8e30"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/dropbox-api/zipball/af7201a52f9f11080a2d43d56d39c74f2b960ab0",
-                "reference": "af7201a52f9f11080a2d43d56d39c74f2b960ab0",
+                "url": "https://api.github.com/repos/spatie/dropbox-api/zipball/47c6a14bcdc639ba90f86f98b2ada38ac9cc8e30",
+                "reference": "47c6a14bcdc639ba90f86f98b2ada38ac9cc8e30",
                 "shasum": ""
             },
             "require": {
@@ -3181,7 +3181,7 @@
                 "spatie",
                 "v2"
             ],
-            "time": "2019-07-01T09:49:01+00:00"
+            "time": "2019-07-04T19:04:14+00:00"
         },
         {
             "name": "spatie/flysystem-dropbox",
@@ -4953,16 +4953,16 @@
         },
         {
             "name": "filp/whoops",
-            "version": "2.4.0",
+            "version": "2.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filp/whoops.git",
-                "reference": "1a1a1044ad00e285bd2825fac4c3a0443d90ad33"
+                "reference": "6fb502c23885701a991b0bba974b1a8eb6673577"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filp/whoops/zipball/1a1a1044ad00e285bd2825fac4c3a0443d90ad33",
-                "reference": "1a1a1044ad00e285bd2825fac4c3a0443d90ad33",
+                "url": "https://api.github.com/repos/filp/whoops/zipball/6fb502c23885701a991b0bba974b1a8eb6673577",
+                "reference": "6fb502c23885701a991b0bba974b1a8eb6673577",
                 "shasum": ""
             },
             "require": {
@@ -5010,7 +5010,7 @@
                 "throwable",
                 "whoops"
             ],
-            "time": "2019-06-23T09:00:00+00:00"
+            "time": "2019-07-04T09:00:00+00:00"
         },
         {
             "name": "fzaninotto/faker",
