@@ -28,6 +28,7 @@ class GoodController extends AdminController
 
         $grid->column('id', __('Id'));
         $grid->column('name', __('Наименование'));
+        $grid->column('name_ext', __('Наименование1'));
 //        $grid->column('text', __('Описание'));
 //        $grid->column('info', __('Применение'));
         $grid->column('image', __('Фото'));
@@ -69,6 +70,7 @@ class GoodController extends AdminController
         $form
             ->tab('Основная', function ($form) {
                 $form->text('name', __('Наименование'));
+                $form->text('name_ext', __('Наименование1'));
                 $form->ckeditor('text', __('Описание'));
                 $form->ckeditor('info', __('Применение'));
                 $form->image('image', __('Фото'));
