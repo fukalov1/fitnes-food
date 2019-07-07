@@ -5,9 +5,10 @@
 
             <div class="container">
                 <div class="goods-page-item" style="background: url(/uploads/{{ $data->image }})no-repeat center;">
-                    <h3>{{ $data->name or '' }}</h3>
-                    <p>&npsp;</p>
-                    <h3>{{ $data->name_ext or '' }}</h3>
+                    {{--{{ dd($data) }}--}}
+                    <h3>{{ $data->name }}</h3>
+                    <p>&nbsp;</p>
+                    <h3>{{ $data->name_ext }}</h3>
                 </div>
 
                 <div class="about-page-main">
