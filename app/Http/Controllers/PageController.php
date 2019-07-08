@@ -76,7 +76,7 @@ class PageController extends Controller
 
                 $m->to($data['to'], 'admin')->subject('Заявка');
             });
-            $data = ['success' => true, 'error' => '', 'result' => 'Спасибо за Ваше обращение. <br/><br/>Сообщение успешно отправлено администратору.<br/><br/> В ближайшее время Вы получите ответ.'];
+            $data = ['success' => true, 'error' => '', 'result' => 'Спасибо за Ваше обращение. Сообщение успешно отправлено администратору.'];
         }
         else {
             $data = ['success' => false, 'error' => 'Ошибка при отправлении. Данные не приняты '.$name.'-'.$phone, 'result' => ''];
