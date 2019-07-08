@@ -22,6 +22,7 @@
                     </div>
                 </div>
                 <div class="about-page-form">
+                    <a name="send_order"></a>
                     <div class="about-page-form-item" v-if="success===false && error===''">
                         <h3>Оставить заявку</h3>
                         <ul>

@@ -21,7 +21,7 @@
             <div class="row">
                 <div class="col-5 col-lg-4 order-1 order-lg-1">
                     <div class="header-main-submit">
-                        <a href="">Оставить <br>заявку</a>
+                        <a href="#send_order">Оставить <br>заявку</a>
                     </div>
                 </div>
                 <div class="col-lg-4 order-3 order-lg-2">
