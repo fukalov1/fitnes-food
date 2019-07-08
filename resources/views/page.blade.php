@@ -3,28 +3,6 @@
 
 @section('content')
 
-    {{--<div class="navig-bottom-height">--}}
-        {{--<div class="navig-bottom default-menu" id="menu">--}}
-            {{--<div class="container">--}}
-                {{--<div class="go-top-top">--}}
-                    {{--<a href="#top-header"></a>--}}
-                {{--</div>--}}
-                {{--<ul>--}}
-                    {{--@foreach($page_blocks as $page_block)--}}
-                        {{--@if($loop->iteration==2)--}}
-                            {{--@if ($data->news_branch)--}}
-                                {{--<li><a href="#news{{ $data->id }}" class="anchor">Главные события</a></li>--}}
-                            {{--@endif--}}
-                        {{--@endif--}}
-                        {{--@if($page_block->header!='' and $page_block->submenu)--}}
-                            {{--<li><a href="#block{{ $page_block->id }}" class="anchor">{{ $page_block->header }}</a></li>--}}
-                        {{--@endif--}}
-                    {{--@endforeach--}}
-                {{--</ul>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-    {{--</div>--}}
-
 
 
     @foreach($page_blocks as $page_block)
@@ -59,6 +37,33 @@
                                 {!! $page_block->text !!}
                             </div>
                         @endif
+                    </div>
+                </div>
+                <div class="about-page-form" id="send_order" v-if="showFormOrder || showFormCall">
+                    <div>
+                        <div class="about-page-form-item" v-if="success===false && error===''">
+                            <h3 v-if="showFormOrder">Оставить заявку</h3>
+                            <h3 v-if="showFormCall">Заказать звонок</h3>
+                            <ul>
+                                <li class="error" :class="{showCheck: showCheck}">Вы должны указать согласие на обработку персональных данных</li>
+                                <li class="error" :class="{showEmpty: showEmpty}">Поля формы обязательны. Заполните их и отправьте заявку еще раз.</li>
+                            </ul>
+                            <form id="send_order" class="" action="#" method="post">
+                                <input type="text"v-model="name" placeholder="ФИО">
+                                <input type="text" v-model="phone" class="phone_numb" placeholder="Ваш номер телефона">
+                                <div class="_middle">
+                                    <input type="checkbox" id="check" class="form-control" v-model="check" />
+                                    <label for="check">Согласие на обработку персональных данных</label>
+                                </div>
+                                <button type="button" @click="send=true">ОТПРАВИТЬ</button>
+                            </form>
+                        </div>
+                        <div class="about-page-form-item" v-if="success===false && error != ''">
+                            <h3>@{{ error }}</h3>
+                        </div>
+                        <div class="about-page-form-item" v-else-if="success && error === ''">
+                            <h3>@{{ resultSend }}</h3>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -255,6 +260,7 @@ var groups = [
                                 </div>
                             </div>
                         </div>
+
                     </section>
             @endforeach
         @endif
