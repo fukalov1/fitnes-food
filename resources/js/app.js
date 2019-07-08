@@ -61,9 +61,10 @@ const app = new Vue({
     },
     watch: {
         send: function (val) {
-            if (val) {
+            debugger
+            if (val && this.showCheck && this.showEmpty) {
                 console.log('send data');
-                let data = JSON.stringify({'name': this.name, 'phone': this.phone});
+                this.error = 'Отправка письма, пожалуйста подождите...';
                 axios.post('/send_order', {'name': this.name, 'phone': this.phone})
                     .then((response) => {
                     console.log('send order data');

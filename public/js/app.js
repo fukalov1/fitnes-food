@@ -49246,12 +49246,11 @@ var app = new Vue({
     send: function send(val) {
       var _this = this;
 
-      if (val) {
+      debugger;
+
+      if (val && this.showCheck && this.showEmpty) {
         console.log('send data');
-        var data = JSON.stringify({
-          'name': this.name,
-          'phone': this.phone
-        });
+        this.error = 'Отправка письма, пожалуйста подождите...';
         axios.post('/send_order', {
           'name': this.name,
           'phone': this.phone
@@ -49417,8 +49416,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /var/www/html/fitnes-food/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /var/www/html/fitnes-food/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/fai/PhpstormProjects/fitnes-food/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/fai/PhpstormProjects/fitnes-food/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

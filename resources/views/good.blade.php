@@ -38,7 +38,7 @@
                             <button type="button" @click="send=true">ОТПРАВИТЬ</button>
                         </form>
                     </div>
-                    <div class="about-page-form-item" v-if="error != ''">
+                    <div class="about-page-form-item" v-if="success===false && error != ''">
                         <h3>@{{ error }}</h3>
                     </div>
                     <div class="about-page-form-item" v-else-if="success && error === ''">
