@@ -1,3 +1,4 @@
+import 'axios';
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -8,6 +9,8 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
+window.axios = require('axios');
+
 
 /**
  * The following block of code may be used to automatically register your
@@ -29,5 +32,51 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  */
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    data() {
+        return {
+            name: '',
+            phone: '',
+            check: false,
+            send: false,
+            resultSend: '',
+            success: false,
+            error: ''
+        }
+    },
+    computed: {
+        showCheck: function () {
+            let result = true;
+            if (this.check===false && this.send)
+                result = false
+            return result;
+        },
+        showEmpty: function () {
+            let result = true;
+            if ((this.name==='' ||this.phone=='') && this.send)
+                result = false
+            return result;
+        },
+
+    },
+    watch: {
+        send: function (val) {
+            if (val) {
+                console.log('send data');
+                let data = JSON.stringify({'name': this.name, 'phone': this.phone});
+                axios.post('/send_order', data)
+                    .then((response) => {
+                    console.log('send order data');
+                    this.success = response.data.success;
+                    this.error = response.data.error;
+                    this.resultSend = response.data.result;
+                    this.send = false;
+                })
+                .catch( e =>  {
+                    console.log('Error send data', e);
+                    this.error = 'Ошибка при отправлении: '+e;
+                });
+            }
+        }
+    }
 });

@@ -56,7 +56,7 @@ body{
 }
 .clearfix:after {clear: both;}
 .error{
-	border: 1px solid #F73E6B!important;
+	/*border: 1px solid #F73E6B!important;*/
 }
 body .p0{
 	padding: 0px;
@@ -362,16 +362,25 @@ a{
 .about-page-form-item button:hover{
 	background:#085bd4;
 }
-input[type=checkbox], input[type=radio] {display: none;}
+input[type=checkbox], input[type=radio] {
+	width: 25px;
+	height: 25px;
+	border: 1px solid #999999;
+	background-color: #ffffff;
+}
+
+._middle input, ._middle label{
+	vertical-align: middle;
+}
 
 input[type=checkbox] + label:before {
-    content: "\2713";
+    /*content: "\2713";*/
     color: transparent;
     display: inline-block;
     border: 1px solid #000;
     font-size: 20px;
     line-height: 22px;
-    margin: -5px 5px 0 0;
+    margin: -15px 5px 0 0;
     height: 25px;
     width: 25px;
     text-align: center;
@@ -512,4 +521,15 @@ footer .header-main{
 }
 .main-page-item:hover a.main-page__more{
 	opacity: 1;
+}
+
+.error {
+	color: #FF0000;
+	border: 0px;
+}
+.showCheck {
+	display: none;
+}
+.showEmpty {
+	display: none;
 }

@@ -19,13 +19,21 @@
 </head>
 <body>
 
-Name: {{ $data['name'] }}
-E-mail: {{ $data['email'] }}
 @if(key_exists('phone', $data))
-Phone: {{ $data['phone'] }}
+    ФИО: {{ $data['name'] }}
 @endif
 
-Message: {{ $data['message'] }}
+@if(key_exists('email', $data))
+    E-mail: {{ $data['email'] }}
+@endif
+
+@if(key_exists('phone', $data))
+    Телефон: {{ $data['phone'] }}
+@endif
+
+@if(key_exists('message', $data))
+    Message: {{ $data['message'] }}
+@endif
 
 
 </body>

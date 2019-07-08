@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use Mail;
+use App\MailForm;
 use App\Page;
 use App\PageBlock;
 
@@ -49,32 +50,35 @@ class PageController extends Controller
         }
     }
 
-//    public function sendFormData($id)
-//    {
-//        if ($id) {
-//
+    public function sendFormData()
+    {
+        $request = request();
+        $name = $request->input('name');
+        $phone = $request->input('phone');
+//        $email = request('email');
+
+        if ($name!='' and $phone != '') {
+
 //            $mailform = MailForm::find($id);
-//
-//            $data = [
-//                'email' => request('email'),
-//                'name' => request('name'),
-//                'phone' => request('phone'),
-//                'message' => request('message'.$id),
-//                'to' => $mailform->sender
-//            ];
-//
-//            Mail::send('emails.sendform', ['data' => $data], function ($m) use ($data) {
-//                $m->from(env('MAIL_USERNAME'), 'Центр трудовых ресурсов Тольятти');
-//
-//                $m->to($data['to'], 'admin')->subject('Обратная связь');
-//            });
-//            $data = ['result' => 'Спасибо за Ваше обращение. <br/><br/>Сообщение успешно отправлено администратору.<br/><br/> В ближайшее время Вы получите ответ.'];
-//        }
-//        else {
-//            $data = ['result' => 'Данные не приняты'];
-//        }
-//        return json_encode($data);
-//    }
+
+            $data = [
+                'name' => request('name'),
+                'phone' => request('phone'),
+                'to' => config('email')
+            ];
+
+            Mail::send('emails.sendform', ['data' => $data], function ($m) use ($data) {
+                $m->from(env('MAIL_USERNAME'), 'сайт');
+
+                $m->to($data['to'], 'admin')->subject('Заявка');
+            });
+            $data = ['success' => true, 'error' => '', 'result' => 'Спасибо за Ваше обращение. <br/><br/>Сообщение успешно отправлено администратору.<br/><br/> В ближайшее время Вы получите ответ.'];
+        }
+        else {
+            $data = ['success' => false, 'error' => 'Ошибка при отправлении. Данные не приняты', 'result' => ''];
+        }
+        return json_encode($data);
+    }
 
 
 }

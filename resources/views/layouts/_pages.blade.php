@@ -15,7 +15,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="images/favicon.png" type="image/png"/>
-    <link rel="stylesheet" href="css/menu-style.css" />
+    <meta name="csrf-token" content="{{csrf_token()}}">
     @include('layouts.styles')
 </head>
 <body>

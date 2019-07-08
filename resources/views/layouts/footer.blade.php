@@ -18,7 +18,6 @@
                 <div class="col-lg-4">
                     <div class="logo">
                         <img src="{{ asset('images/logo.png') }}" alt="">
-                        File: <input type="file" name="file"/>
                     </div>
                 </div>
                 <div class="col-lg-4 d-none d-lg-block">
