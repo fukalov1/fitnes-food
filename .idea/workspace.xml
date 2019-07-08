@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d932d1c0-ce41-4256-8cec-926d35271172" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/page.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/page.blade.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/vendor/beyondcode/laravel-dump-server/" />
     <ignored path="$PROJECT_DIR$/vendor/composer/" />
@@ -122,7 +122,7 @@
           <entry key="js" value="225" />
           <entry key="php" value="620" />
           <entry key="scss" value="20" />
-          <entry key="txt" value="41" />
+          <entry key="txt" value="76" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -131,7 +131,7 @@
           <entry key="CSS" value="110" />
           <entry key="JavaScript" value="225" />
           <entry key="PHP" value="120" />
-          <entry key="PLAIN_TEXT" value="41" />
+          <entry key="PLAIN_TEXT" value="76" />
           <entry key="SCSS" value="20" />
         </counts>
       </usages-collector>
@@ -175,14 +175,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/page.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="409">
-              <caret line="67" column="22" selection-start-line="67" selection-start-column="22" selection-end-line="67" selection-end-column="22" />
-              <folding>
-                <element signature="e#1532#1639#0#HTML" />
-              </folding>
+            <state relative-caret-position="255">
+              <caret line="17" column="91" selection-start-line="17" selection-start-column="91" selection-end-line="17" selection-end-column="91" />
             </state>
           </provider>
         </entry>
@@ -190,13 +187,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/layouts/header.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
+            <state relative-caret-position="615">
               <caret line="41" column="42" selection-start-line="41" selection-start-column="42" selection-end-line="41" selection-end-column="42" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/css/main.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="152">
@@ -208,8 +205,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/good.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="409">
-              <caret line="49" column="22" lean-forward="true" selection-start-line="23" selection-start-column="15" selection-end-line="49" selection-end-column="22" />
+            <state relative-caret-position="79">
+              <caret line="6" column="114" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="114" />
+              <folding>
+                <element signature="e#131#200#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -313,8 +313,8 @@
         <option value="$PROJECT_DIR$/database/migrations/2019_07_08_160539_add_page_name_ext.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_07_08_161319_add_page_blocks_header1.php" />
         <option value="$PROJECT_DIR$/app/Admin/Controllers/PageBlockController.php" />
-        <option value="$PROJECT_DIR$/resources/views/page.blade.php" />
         <option value="$PROJECT_DIR$/public/css/main.css" />
+        <option value="$PROJECT_DIR$/resources/views/page.blade.php" />
       </list>
     </option>
   </component>
@@ -768,17 +768,31 @@
       <option name="project" value="LOCAL" />
       <updated>1562608867480</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="fix css for submenu">
+      <created>1562609183405</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1562609183405</updated>
+    </task>
+    <task id="LOCAL-00024" summary="fix show photo">
+      <created>1562611066256</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1562611066256</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59832000" />
+    <option name="totallyTimeSpent" value="61078000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="0" width="1602" height="874" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18082368" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18082368" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -793,7 +807,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32756326" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.34886816" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.34886816" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -852,7 +866,9 @@
     <MESSAGE value="target send order" />
     <MESSAGE value="new place for goods" />
     <MESSAGE value="fix show form for page" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix show form for page" />
+    <MESSAGE value="fix css for submenu" />
+    <MESSAGE value="fix show photo" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix show photo" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/Providers/AppServiceProvider.php">
@@ -1083,13 +1099,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/header.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="41" column="42" selection-start-line="41" selection-start-column="42" selection-end-line="41" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_07_07_140130_add_goods_name_ext.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
@@ -1138,6 +1147,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="577" column="1" lean-forward="true" selection-start-line="577" selection-start-column="1" selection-end-line="577" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/header.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="41" column="42" selection-start-line="41" selection-start-column="42" selection-end-line="41" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Admin/Controllers/GoodController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
@@ -1147,25 +1170,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/good.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="49" column="22" lean-forward="true" selection-start-line="23" selection-start-column="15" selection-end-line="49" selection-end-column="22" />
+        <state relative-caret-position="79">
+          <caret line="6" column="114" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="114" />
+          <folding>
+            <element signature="e#131#200#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/page.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="67" column="22" selection-start-line="67" selection-start-column="22" selection-end-line="67" selection-end-column="22" />
-          <folding>
-            <element signature="e#1532#1639#0#HTML" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="577" column="1" lean-forward="true" selection-start-line="577" selection-start-column="1" selection-end-line="577" selection-end-column="1" />
+        <state relative-caret-position="255">
+          <caret line="17" column="91" selection-start-line="17" selection-start-column="91" selection-end-line="17" selection-end-column="91" />
         </state>
       </provider>
     </entry>
