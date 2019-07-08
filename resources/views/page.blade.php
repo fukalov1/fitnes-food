@@ -15,7 +15,7 @@
                 {{--</div>--}}
             {{--</section>--}}
             <div class="container">
-                <div class="about-page-item">
+                <div class="about-page-item" style="background: url(/uploads/{{ $data->image }})no-repeat center;">
                     <h2>{{ $page_block->header }}</h2>
                     @if($page_block->header1!='')
                         <p></p>
