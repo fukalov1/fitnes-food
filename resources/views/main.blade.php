@@ -13,63 +13,34 @@
         @endif
     @endforeach
 
-    {{--<section id="main-page">--}}
-        {{--<div class="container-custom">--}}
-            {{--<div class="row">--}}
-                {{--<div class="col-md-6 col-lg-4">--}}
-                    {{--<div class="main-page-item" style="background: url('images/mp1.jpg')no-repeat center;">--}}
-                        {{--<div class="main-page-item-txt">--}}
-                            {{--<h3><span>Изомальтоолигосахарид</span> <br><span>ИМО-900</span></h3>--}}
-                            {{--<div class="main-page-item-desc">--}}
-                                {{--<h5>Описание</h5>--}}
-                                {{--<p>Встречается в повседневной пище человека, но может быть получен с помощью ферментативной обработки крахмала.--}}
-                                    {{--В настоящее время он широко используется в качестве подсластителя в различных странах в пищевой промышленности и спортивном питании. IMO – это смесь углеводов с короткой цепочкой, состоящих из молекул глюкозы, которые соединены между собой устойчивыми к перевариванию связями.</p>--}}
-                            {{--</div>--}}
-                            {{--<div class="main-page-item-application">--}}
-                                {{--<h5>Применение</h5>--}}
-                                {{--<p>Используется при изготовлении энергетических и протеиновых батончиков, приготовлении шоколада, грильяжа, мягкой и твердой карамели, драже, мороженого, конфитюров</p>--}}
-                            {{--</div>--}}
-                            {{--<a href="" class="main-page__more">ПОдробнее</a>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-                {{--<div class="col-md-6 col-lg-4">--}}
-                    {{--<div class="main-page-item" style="background: url('images/mp2.jpg')no-repeat center;">--}}
-                        {{--<div class="main-page-item-txt">--}}
-                            {{--<h3><span>Кукурузное водорастворимое волокно</span> <br><span>(Резистентный декстрин)</span></h3>--}}
-                            {{--<div class="main-page-item-desc">--}}
-                                {{--<h5>Описание</h5>--}}
-                                {{--<p>Это растворимая клетчатка природного происхождения, полученная из крахмалов. Он легко растворим в воде до прозрачного раствора с легким сладковатым вкусом. Водорастворимое кукурузное волокно может использоваться во многих видах продуктов, таких как белковые батончики, крупы, напитки и пищевые продукты.</p>--}}
-                            {{--</div>--}}
-                            {{--<div class="main-page-item-application">--}}
-                                {{--<h5>Применение</h5>--}}
-                                {{--<p>Используется в белковых батончиках, крупах (каши), напитках, колбасных изделиях, детском питании, консервах, полуфабрикатах, шоколадных изделиях, карамели, мороженном.</p>--}}
-                            {{--</div>--}}
-                            {{--<a href="" class="main-page__more">ПОдробнее</a>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-                {{--<div class="col-md-6 col-lg-4">--}}
-                    {{--<div class="main-page-item" style="background: url('images/mp3.jpg')no-repeat center;">--}}
-                        {{--<div class="main-page-item-txt">--}}
-                            {{--<h3><span>Натуральный шоколад без сахара</span></h3>--}}
-                            {{--<div class="main-page-item-desc">--}}
-                                {{--<h5>Описание</h5>--}}
-                                {{--<p>Встречается в повседневной пище человека, но может быть получен с помощью ферментативной обработки крахмала.--}}
-                                    {{--В настоящее время он широко используется в качестве подсластителя в различных странах в пищевой промышленности и спортивном питании. IMO – это смесь углеводов с короткой цепочкой, состоящих из молекул глюкозы, которые соединены между собой устойчивыми к перевариванию связями.</p>--}}
-                            {{--</div>--}}
-                            {{--<div class="main-page-item-application">--}}
-                                {{--<h5>Применение</h5>--}}
-                                {{--<p>Используется при изготовлении энергетических и протеиновых батончиков, приготовлении шоколада, грильяжа, мягкой и твердой карамели, драже, мороженого, конфитюров</p>--}}
-                            {{--</div>--}}
-                            {{--<a href="" class="main-page__more">ПОдробнее</a>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-    {{--</section>--}}
-
+    <div class="about-page-form" id="send_order" v-if="showFormOrder || showFormCall">
+        <div>
+            <div class="about-page-form-item" v-if="success===false && error===''">
+                <h3 v-if="showFormOrder">Оставить заявку</h3>
+                <h3 v-if="showFormCall">Заказать звонок</h3>
+                <ul>
+                    <li class="error" :class="{showCheck: showCheck}">Вы должны указать согласие на обработку персональных данных</li>
+                    <li class="error" :class="{showEmpty: showEmpty}">Поля формы обязательны. Заполните их и отправьте заявку еще раз.</li>
+                </ul>
+                <form id="send_order" class="" action="#" method="post">
+                    <input type="text"v-model="name" placeholder="ФИО">
+                    <input type="text" v-model="phone" class="phone_numb" placeholder="Ваш номер телефона">
+                    <div class="_middle">
+                        <input type="checkbox" id="check" class="form-control" v-model="check" />
+                        <label for="check">Согласие на обработку персональных данных</label>
+                    </div>
+                    <button type="button" @click="send=true">ОТПРАВИТЬ</button>
+                </form>
+            </div>
+            <div class="about-page-form-item" v-if="success===false && error != ''">
+                <h3>@{{ error }}</h3>
+            </div>
+            <div class="about-page-form-item" v-else-if="success && error === ''">
+                <h3>@{{ resultSend }}</h3>
+            </div>
+        </div>
+    </div>
+    </div>
 
 
 @stop

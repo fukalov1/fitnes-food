@@ -195,6 +195,7 @@ class PageBlockController extends Controller
         $form->number('orders', 'Номер показа')->default(0);
 //        $form->switch('submenu', 'Пункт подменю');
         $form->text('header', 'Заголовок')->default('');
+        $form->text('header1', 'Заголовок 1')->default('');
         $form->ckeditor('text', 'Текст блока')
             ->options(
                 [
@@ -217,7 +218,7 @@ class PageBlockController extends Controller
                     'height' => 500
                 ])->default('-');
 //        $form->myresizeimage('image', 'Фото');
-//        $form->image('image', 'Фото');
+        $form->image('image', 'Фото');
 
         return $form;
     }

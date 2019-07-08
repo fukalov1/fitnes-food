@@ -84,10 +84,10 @@ class PageController extends Controller
         $grid->filter(function($filter){
             // Remove the default id filter
             $filter->disableIdFilter();
-            $filter->equal('news_branch', 'Раздел новостей')->radio([
-                '0'    => 'нет',
-                '1'    => 'да',
-            ]);
+//            $filter->equal('news_branch', 'Раздел новостей')->radio([
+//                '0'    => 'нет',
+//                '1'    => 'да',
+//            ]);
         });
 
         $grid->id('Id');

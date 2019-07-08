@@ -39,6 +39,10 @@
             <div class="container">
                 <div class="about-page-item">
                     <h2>{{ $page_block->header }}</h2>
+                    @if($page_block->header1!='')
+                        <p></p>
+                        <h2>{{ $page_block->header1 }}</h2>
+                    @endif
                 </div>
 
                 <div class="about-page-main">

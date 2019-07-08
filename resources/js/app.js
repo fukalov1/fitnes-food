@@ -7,9 +7,12 @@ import 'axios';
  */
 
 require('./bootstrap');
+var VueScrollTo = require('vue-scrollto');
 
 window.Vue = require('vue');
 window.axios = require('axios');
+Vue.use(VueScrollTo);
+
 
 
 /**
@@ -23,7 +26,7 @@ window.axios = require('axios');
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+// Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -41,7 +44,9 @@ const app = new Vue({
             send: false,
             resultSend: '',
             success: false,
-            error: ''
+            error: '',
+            showFormOrder: false,
+            showFormCall: false,
         }
     },
     computed: {
@@ -61,11 +66,13 @@ const app = new Vue({
     },
     watch: {
         send: function (val) {
-            debugger
             if (val && this.showCheck && this.showEmpty) {
                 console.log('send data');
                 this.error = 'Отправка письма, пожалуйста подождите...';
-                axios.post('/send_order', {'name': this.name, 'phone': this.phone})
+                let caption = 'Отправить заявку';
+                if (this.showFormCall)
+                    caption = 'Заказать звонок';
+                axios.post('/send_order', {'name': this.name, 'phone': this.phone, 'caption': caption})
                     .then((response) => {
                     console.log('send order data');
                     this.success = response.data.success;

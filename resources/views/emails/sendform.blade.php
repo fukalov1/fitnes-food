@@ -19,6 +19,10 @@
 </head>
 <body>
 
+@if(key_exists('caption', $data))
+    <h3>{{ $data['caption'] }}</h3>
+@endif
+
 @if(key_exists('phone', $data))
     ФИО: {{ $data['name'] }}
 @endif

@@ -3,7 +3,7 @@
 
 @section('content')
 
-            <div id="app" class="container">
+            <div class="container">
                 <div class="goods-page-item" style="background: url(/uploads/{{ $data->image }})no-repeat center;">
                     {{--{{ dd($data) }}--}}
                     <h3>{{ $data->name }}</h3>
@@ -21,10 +21,11 @@
                             </div>
                     </div>
                 </div>
-                <div class="about-page-form">
-                    <a name="send_order"></a>
+                <div class="about-page-form" id="send_order" v-if="showFormOrder || showFormCall">
+                    <div>
                     <div class="about-page-form-item" v-if="success===false && error===''">
-                        <h3>Оставить заявку</h3>
+                        <h3 v-if="showFormOrder">Оставить заявку</h3>
+                        <h3 v-if="showFormCall">Заказать звонок</h3>
                         <ul>
                             <li class="error" :class="{showCheck: showCheck}">Вы должны указать согласие на обработку персональных данных</li>
                             <li class="error" :class="{showEmpty: showEmpty}">Поля формы обязательны. Заполните их и отправьте заявку еще раз.</li>
@@ -44,6 +45,7 @@
                     </div>
                     <div class="about-page-form-item" v-else-if="success && error === ''">
                         <h3>@{{ resultSend }}</h3>
+                    </div>
                     </div>
                 </div>
             </div>

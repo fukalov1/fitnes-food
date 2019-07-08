@@ -18,7 +18,8 @@
     <meta name="csrf-token" content="{{csrf_token()}}">
     @include('layouts.styles')
 </head>
-<body>
+<body data-spy="scroll" data-target="send-order">
+<div id="app">
     @include('layouts.header')
 
     @yield('content')
@@ -27,10 +28,10 @@
 
     @include('layouts.footer')
 
-<div class="go-top">
-    <a href="#top-header"></a>
+    <div class="go-top">
+        <a href="#top-header"></a>
+    </div>
 </div>
-
 @include('layouts.scripts')
 </body>
 </html>

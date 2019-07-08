@@ -56,6 +56,9 @@ class PageController extends Controller
         $request = request();
         $name = $request->input('name');
         $phone = $request->input('phone');
+        $caption = $request->input('caption');
+        if (!isset($caption))
+            $caption = 'Отправка заявки.';
 //        $email = request('email');
 
 //        print "$name-$phone";
@@ -68,6 +71,7 @@ class PageController extends Controller
             $data = [
                 'name' => $name,
                 'phone' => $phone,
+                'caprion' => $caption,
                 'to' => config('email')
             ];
 
