@@ -64,7 +64,7 @@ const app = new Vue({
             if (val) {
                 console.log('send data');
                 let data = JSON.stringify({'name': this.name, 'phone': this.phone});
-                axios.post('/send_order', data)
+                axios.post('/send_order', {'name': this.name, 'phone': this.phone})
                     .then((response) => {
                     console.log('send order data');
                     this.success = response.data.success;

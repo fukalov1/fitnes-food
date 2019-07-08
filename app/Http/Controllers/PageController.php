@@ -58,13 +58,16 @@ class PageController extends Controller
         $phone = $request->input('phone');
 //        $email = request('email');
 
-        if ($name!='' and $phone != '') {
+//        print "$name-$phone";
+//        exit;
+
+        if ($name !='' and $phone != '') {
 
 //            $mailform = MailForm::find($id);
 
             $data = [
-                'name' => request('name'),
-                'phone' => request('phone'),
+                'name' => $name,
+                'phone' => $phone,
                 'to' => config('email')
             ];
 
@@ -76,7 +79,7 @@ class PageController extends Controller
             $data = ['success' => true, 'error' => '', 'result' => 'Спасибо за Ваше обращение. <br/><br/>Сообщение успешно отправлено администратору.<br/><br/> В ближайшее время Вы получите ответ.'];
         }
         else {
-            $data = ['success' => false, 'error' => 'Ошибка при отправлении. Данные не приняты', 'result' => ''];
+            $data = ['success' => false, 'error' => 'Ошибка при отправлении. Данные не приняты '.$name.'-'.$phone, 'result' => ''];
         }
         return json_encode($data);
     }

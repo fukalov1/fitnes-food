@@ -49252,7 +49252,10 @@ var app = new Vue({
           'name': this.name,
           'phone': this.phone
         });
-        axios.post('/send_order', data).then(function (response) {
+        axios.post('/send_order', {
+          'name': this.name,
+          'phone': this.phone
+        }).then(function (response) {
           console.log('send order data');
           _this.success = response.data.success;
           _this.error = response.data.error;
