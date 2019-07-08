@@ -5,6 +5,7 @@ use Mail;
 use App\MailForm;
 use App\Page;
 use App\PageBlock;
+use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
