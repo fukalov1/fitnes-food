@@ -33,7 +33,7 @@
                     <div class="phone-header">
                         <a href="tel:{{ config('phone') }}" class="ph1">{{ config('phone') }}</a>
                         <p>ПН-ПТ: с 8:00 до 17:00</p>
-                        <a href="" class="ph2">Заказать звонок</a>
+                        <a href="#send_order" class="ph2">Заказать звонок</a>
                     </div>
                 </div>
             </div>

@@ -72,11 +72,11 @@ class PageController extends Controller
             ];
 
             Mail::send('emails.sendform', ['data' => $data], function ($m) use ($data) {
-                $m->from(env('MAIL_USERNAME'), 'Fitnes-food.com');
+                $m->from(env('MAIL_USERNAME'), config('caption'));
 
                 $m->to($data['to'], 'admin')->subject('Заявка');
             });
-            $data = ['success' => true, 'error' => '', 'result' => 'Спасибо за Ваше обращение. Сообщение успешно отправлено администратору.'];
+            $data = ['success' => true, 'error' => '', 'result' => 'Спасибо за Ваше обращение. Сообщение успешно отправлено.'];
         }
         else {
             $data = ['success' => false, 'error' => 'Ошибка при отправлении. Данные не приняты '.$name.'-'.$phone, 'result' => ''];
