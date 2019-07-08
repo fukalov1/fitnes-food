@@ -68,7 +68,7 @@ class PageController extends Controller
             ];
 
             Mail::send('emails.sendform', ['data' => $data], function ($m) use ($data) {
-                $m->from(env('MAIL_USERNAME'), 'сайт');
+                $m->from(env('MAIL_USERNAME'), 'Fitnes-food.com');
 
                 $m->to($data['to'], 'admin')->subject('Заявка');
             });
