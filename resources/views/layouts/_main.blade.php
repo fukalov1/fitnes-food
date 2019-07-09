@@ -14,33 +14,23 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="{{asset('images/logo.png')}}" type="image/png"/>
+    <meta name="csrf-token" content="{{csrf_token()}}">
 
     @include('layouts.styles')
 </head>
 <body>
+<div id="app">
     @include('layouts.header')
 
     @yield('content')
 
 
-{{--<section id="footer-links">--}}
-    {{--<div class="container">--}}
-        {{--<ul>--}}
-            {{--<li><a href="http://old.ctrtlt.ru">Старая версия сайта</a></li>--}}
-            {{--<li><a href="">Профстандарт в образовани</a></li>--}}
-            {{--<li><a href="">Кадры для региона</a></li>--}}
-            {{--<li><a href="">Календарь мероприятий</a></li>--}}
-            {{--<li><a href="">Автоматизированная информационная система</a></li>--}}
-        {{--</ul>--}}
-    {{--</div>--}}
-{{--</section>--}}
+    @include('layouts.footer')
 
-@include('layouts.footer')
-
-<div class="go-top">
-    <a href="#top-header"></a>
+    <div class="go-top">
+        <a href="#top-header"></a>
+    </div>
 </div>
-
 @include('layouts.scripts')
 </body>
 </html>

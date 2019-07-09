@@ -40,6 +40,8 @@ const app = new Vue({
         return {
             name: '',
             phone: '',
+            email: '',
+            message: '',
             check: false,
             send: false,
             resultSend: '',

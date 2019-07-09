@@ -24,8 +24,6 @@
 
     @yield('content')
 
-
-
     @include('layouts.footer')
 
     <div class="go-top">
