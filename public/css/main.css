@@ -371,6 +371,7 @@ input[type=checkbox], input[type=radio] {
 
 ._middle input, ._middle label{
 	vertical-align: middle;
+	margin: 0;
 }
 
 input[type=checkbox] + label:before {
