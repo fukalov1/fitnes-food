@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d932d1c0-ce41-4256-8cec-926d35271172" name="Default Changelist" comment="fix meta">
+    <list default="true" id="d932d1c0-ce41-4256-8cec-926d35271172" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PageController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/_pages.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/_pages.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Admin/Controllers/TemplateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/Controllers/TemplateController.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/vendor/beyondcode/laravel-dump-server/" />
     <ignored path="$PROJECT_DIR$/vendor/composer/" />
@@ -121,7 +120,7 @@
         <counts>
           <entry key="css" value="198" />
           <entry key="js" value="249" />
-          <entry key="php" value="1428" />
+          <entry key="php" value="1507" />
           <entry key="scss" value="20" />
           <entry key="txt" value="128" />
         </counts>
@@ -131,7 +130,7 @@
           <entry key="Blade" value="767" />
           <entry key="CSS" value="198" />
           <entry key="JavaScript" value="249" />
-          <entry key="PHP" value="661" />
+          <entry key="PHP" value="740" />
           <entry key="PLAIN_TEXT" value="128" />
           <entry key="SCSS" value="20" />
         </counts>
@@ -140,7 +139,7 @@
         <counts>
           <entry key="css" value="1" />
           <entry key="js" value="1" />
-          <entry key="php" value="24" />
+          <entry key="php" value="25" />
           <entry key="scss" value="1" />
         </counts>
       </usages-collector>
@@ -149,7 +148,7 @@
           <entry key="Blade" value="12" />
           <entry key="CSS" value="1" />
           <entry key="JavaScript" value="1" />
-          <entry key="PHP" value="12" />
+          <entry key="PHP" value="13" />
           <entry key="SCSS" value="1" />
         </counts>
       </usages-collector>
@@ -183,11 +182,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/layouts/_pages.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="409">
               <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Admin/Controllers/TemplateController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="29" column="46" selection-start-line="29" selection-start-column="46" selection-end-line="29" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -333,10 +341,10 @@
         <option value="$PROJECT_DIR$/resources/views/layouts/styles.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_07_12_130946_create_templates.php" />
         <option value="$PROJECT_DIR$/app/Admin/routes.php" />
-        <option value="$PROJECT_DIR$/app/Admin/Controllers/TemplateController.php" />
         <option value="$PROJECT_DIR$/resources/views/main.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/PageController.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/_pages.blade.php" />
+        <option value="$PROJECT_DIR$/app/Admin/Controllers/TemplateController.php" />
       </list>
     </option>
   </component>
@@ -661,7 +669,7 @@
       <workItem from="1562529578171" duration="4892000" />
       <workItem from="1562562407232" duration="3281000" />
       <workItem from="1562679784370" duration="4930000" />
-      <workItem from="1562779561308" duration="3095000" />
+      <workItem from="1562779561308" duration="3463000" />
     </task>
     <task id="LOCAL-00001" summary="fix bag field redirect pages">
       <created>1561887949174</created>
@@ -866,17 +874,31 @@
       <option name="project" value="LOCAL" />
       <updated>1562937613062</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="fix meta">
+      <created>1562939311074</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1562939311074</updated>
+    </task>
+    <task id="LOCAL-00031" summary="fix meta">
+      <created>1562939458226</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1562939458226</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69103000" />
+    <option name="totallyTimeSpent" value="69471000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="0" width="1602" height="874" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18597169" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18597169" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -891,7 +913,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32712767" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.34886816" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.34886816" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -1210,13 +1232,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Admin/Controllers/TemplateController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="29" column="38" lean-forward="true" selection-start-line="29" selection-start-column="38" selection-end-line="29" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/layouts/_main.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -1245,6 +1260,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="409">
           <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Admin/Controllers/TemplateController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="29" column="46" selection-start-line="29" selection-start-column="46" selection-end-line="29" selection-end-column="46" />
         </state>
       </provider>
     </entry>

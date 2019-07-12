@@ -27,8 +27,8 @@ class TemplateController extends AdminController
         $grid = new Grid(new Template);
 
 //        $grid->column('id', __('Id'));
-        $grid->column('Наименование', __('Name'));
-        $grid->column('По умолчанию', __('Default'));
+        $grid->column('name', __('Наименование'));
+        $grid->column('default', __('По умолчанию'));
 //        $grid->column('styles', __('Styles'));
 //        $grid->column('scripts', __('Scripts'));
 //        $grid->column('created_at', __('Created at'));
