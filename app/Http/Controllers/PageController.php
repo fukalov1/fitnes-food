@@ -1,20 +1,23 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Template;
 use Mail;
 use App\MailForm;
 use App\Page;
 use App\PageBlock;
+
 use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
     public $bread_crubs;
 
-    public function __construct(Page $page, PageBlock $pageBlock)
+    public function __construct(Page $page, PageBlock $pageBlock, Template $template)
     {
         $this->page = $page;
         $this->pageBlock = $pageBlock;
+        $this->template = $template;
 
 //        $this->mailForm = $mailForm;
     }
@@ -36,6 +39,14 @@ class PageController extends Controller
         $data['pages'] = $this->page->getMenu();
         $data['page_blocks'] = $this->pageBlock->where('page_id', $page->id)->orderBy('orders')->get();
 
+        $user_templates = $this->template->where('default',1)->get();
+//
+        $data['template'] = [];
+        foreach ($user_templates as $user_template) {
+            $data['template'] = $user_template->toArray();
+        }
+
+//        dd($data);
 //        dd($page->getMenu());
 //dd($template, $page->id,$data);
         return view($template, $data);

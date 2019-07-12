@@ -17,6 +17,10 @@
     <link rel="shortcut icon" href="images/favicon.png" type="image/png"/>
     <meta name="csrf-token" content="{{csrf_token()}}">
     @include('layouts.styles')
+
+    {{ $data->template['styles'] }}
+
+
 </head>
 <body data-spy="scroll" data-target="send-order">
 <div id="app">
@@ -31,5 +35,8 @@
     </div>
 </div>
 @include('layouts.scripts')
+
+{{ $data->template['scripts'] }}
+
 </body>
 </html>
