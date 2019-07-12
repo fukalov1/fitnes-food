@@ -67,10 +67,10 @@ class TemplateController extends AdminController
     {
         $form = new Form(new Template);
 
-        $form->text('Наименование', __('Name'));
-        $form->switch('По умолчанию', __('Default'));
-        $form->textarea('Стили', __('Styles'));
-        $form->textarea('Скрипты', __('Scripts'));
+        $form->text('name', __('Наименование'));
+        $form->switch('default', __('По умолчанию'));
+        $form->textarea('styles', __('Стили'));
+        $form->textarea('scripts', __('Скрипты'));
 
         return $form;
     }
