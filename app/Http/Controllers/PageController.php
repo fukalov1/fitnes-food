@@ -39,12 +39,8 @@ class PageController extends Controller
         $data['pages'] = $this->page->getMenu();
         $data['page_blocks'] = $this->pageBlock->where('page_id', $page->id)->orderBy('orders')->get();
 
-        $user_templates = $this->template->where('default',1)->get();
-//
-        $data['template'] = [];
-        foreach ($user_templates as $user_template) {
-            $data['template'] = $user_template->toArray();
-        }
+        $user_template = $this->template->where('default',1)->get();
+        $data['template'] = $user_template;
 
 //        dd($data);
 //        dd($page->getMenu());

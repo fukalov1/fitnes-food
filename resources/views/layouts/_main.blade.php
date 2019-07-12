@@ -17,7 +17,10 @@
     <meta name="csrf-token" content="{{csrf_token()}}">
 
     @include('layouts.styles')
-    {{ $data->template['styles'] }}
+
+    @foreach($template as $item)
+        {{ $item->styles }}
+    @endforeach
 
 </head>
 <body>
@@ -34,6 +37,10 @@
     </div>
 </div>
 @include('layouts.scripts')
-{{ $data->template['scripts'] }}
+
+@foreach($template as $item)
+    {{ $item->scripts }}
+@endforeach
+
 </body>
 </html>

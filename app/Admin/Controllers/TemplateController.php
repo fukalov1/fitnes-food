@@ -28,7 +28,7 @@ class TemplateController extends AdminController
 
 //        $grid->column('id', __('Id'));
         $grid->column('name', __('Наименование'));
-        $grid->column('default', __('По умолчанию'));
+        $grid->column('default', __('Используется'));
 //        $grid->column('styles', __('Styles'));
 //        $grid->column('scripts', __('Scripts'));
 //        $grid->column('created_at', __('Created at'));
@@ -68,7 +68,7 @@ class TemplateController extends AdminController
         $form = new Form(new Template);
 
         $form->text('name', __('Наименование'));
-        $form->switch('default', __('По умолчанию'));
+        $form->switch('default', __('Используется'));
         $form->textarea('styles', __('Стили'));
         $form->textarea('scripts', __('Скрипты'));
 
