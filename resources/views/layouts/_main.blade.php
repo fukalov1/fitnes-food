@@ -17,6 +17,8 @@
     <meta name="csrf-token" content="{{csrf_token()}}">
 
     @include('layouts.styles')
+    {{ $data->template['styles'] }}
+
 </head>
 <body>
 <div id="app">
@@ -32,5 +34,6 @@
     </div>
 </div>
 @include('layouts.scripts')
+{{ $data->template['scripts'] }}
 </body>
 </html>
