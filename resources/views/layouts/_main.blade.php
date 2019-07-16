@@ -19,7 +19,7 @@
     @include('layouts.styles')
 
     @foreach($template as $item)
-        {{ $item->styles }}
+        {!! $item->styles !!}
     @endforeach
 
 </head>
@@ -39,7 +39,7 @@
 @include('layouts.scripts')
 
 @foreach($template as $item)
-    {{ $item->scripts }}
+    {!! $item->scripts !!}
 @endforeach
 
 </body>
