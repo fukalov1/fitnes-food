@@ -81,6 +81,7 @@ const app = new Vue({
                     this.error = response.data.error;
                     this.resultSend = response.data.result;
                     this.send = false;
+                    location.href = '/spasibo';
                 })
                 .catch( e =>  {
                     console.log('Error send data', e);

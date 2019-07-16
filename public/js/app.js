@@ -49601,6 +49601,7 @@ var app = new Vue({
           _this.error = response.data.error;
           _this.resultSend = response.data.result;
           _this.send = false;
+          location.href = '/spasibo';
         })["catch"](function (e) {
           console.log('Error send data', e);
           _this.error = 'Ошибка при отправлении: ' + e;
