@@ -544,12 +544,13 @@ footer .header-main{
 .error {
 	color: #FF0000;
 	border: 0px;
+	display: none;
 }
 .showCheck {
-	display: none;
+	display: block;
 }
 .showEmpty {
-	display: none;
+	display: block;
 }
 
 

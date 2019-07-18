@@ -53,16 +53,11 @@ const app = new Vue({
     },
     computed: {
         showCheck: function () {
-            let result = true
-            if (this.check===false)
-                result = false
-            return result;
+            return this.check===false ? true : false;
+
         },
         showEmpty: function () {
-            let result = true
-            if (this.name==='' ||this.phone=='')
-                result = false
-            return result;
+            return (this.name==='' ||this.phone=='') ? true : false;
         },
 
     },
@@ -70,9 +65,18 @@ const app = new Vue({
 
     },
     methods: {
+        checkForm() {
+            if (this.showCheck && this.showEmpty) {
+                this.send = true;
+            }
+            else {
+                this.send = false;
+                this.sendForm();
+            }
+        },
         sendForm() {
             // this.send = true;
-            if (this.showCheck && this.showEmpty) {
+            // if (this.showCheck && this.showEmpty) {
                 console.log('send data');
                 this.error = 'Отправка письма, пожалуйста подождите...';
                 let caption = 'Отправить заявку';
@@ -98,7 +102,7 @@ const app = new Vue({
                         console.log('Error send data', e);
                         this.error = 'Ошибка при отправлении: '+e;
                     });
-            }
+            // }
         }
     }
 });

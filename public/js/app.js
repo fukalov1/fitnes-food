@@ -49572,56 +49572,60 @@ var app = new Vue({
   },
   computed: {
     showCheck: function showCheck() {
-      var result = true;
-      if (this.check === false) result = false;
-      return result;
+      return this.check === false ? true : false;
     },
     showEmpty: function showEmpty() {
-      var result = true;
-      if (this.name === '' || this.phone == '') result = false;
-      return result;
+      return this.name === '' || this.phone == '' ? true : false;
     }
   },
   watch: {},
   methods: {
+    checkForm: function checkForm() {
+      if (this.showCheck && this.showEmpty) {
+        this.send = true;
+      } else {
+        this.send = false;
+        this.sendForm();
+      }
+    },
     sendForm: function sendForm() {
       var _this = this;
 
-      if (this.showCheck && this.showEmpty) {
-        console.log('send data');
-        this.error = 'Отправка письма, пожалуйста подождите...';
-        var caption = 'Отправить заявку';
-        var data = {};
+      // this.send = true;
+      // if (this.showCheck && this.showEmpty) {
+      console.log('send data');
+      this.error = 'Отправка письма, пожалуйста подождите...';
+      var caption = 'Отправить заявку';
+      var data = {};
 
-        if (this.showFormCall) {
-          caption = 'Заказать звонок';
-          data = {
-            'name': this.name,
-            'phone': this.phone,
-            'caption': caption
-          };
-        } else {
-          data = {
-            'name': this.name,
-            'phone': this.phone,
-            'email': this.email,
-            'message': this.message,
-            'caption': caption
-          };
-        }
-
-        axios.post('/send_order', data).then(function (response) {
-          console.log('send order data');
-          _this.success = response.data.success;
-          _this.error = response.data.error;
-          _this.resultSend = response.data.result;
-          _this.send = false;
-          location.href = '/spasibo';
-        })["catch"](function (e) {
-          console.log('Error send data', e);
-          _this.error = 'Ошибка при отправлении: ' + e;
-        });
+      if (this.showFormCall) {
+        caption = 'Заказать звонок';
+        data = {
+          'name': this.name,
+          'phone': this.phone,
+          'caption': caption
+        };
+      } else {
+        data = {
+          'name': this.name,
+          'phone': this.phone,
+          'email': this.email,
+          'message': this.message,
+          'caption': caption
+        };
       }
+
+      axios.post('/send_order', data).then(function (response) {
+        console.log('send order data');
+        _this.success = response.data.success;
+        _this.error = response.data.error;
+        _this.resultSend = response.data.result;
+        _this.send = false;
+        location.href = '/spasibo';
+      })["catch"](function (e) {
+        console.log('Error send data', e);
+        _this.error = 'Ошибка при отправлении: ' + e;
+      }); // }
     }
   }
 });
