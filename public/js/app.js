@@ -49578,7 +49578,14 @@ var app = new Vue({
       return this.name === '' || this.phone == '' ? true : false;
     }
   },
-  watch: {},
+  watch: {
+    check: function check(val) {
+      if (val === false) this.send = true;
+    },
+    showEmpty: function showEmpty(val) {
+      if (val === false) this.send = true;
+    }
+  },
   methods: {
     checkForm: function checkForm() {
       if (this.showCheck && this.showEmpty) {
@@ -49591,41 +49598,41 @@ var app = new Vue({
     sendForm: function sendForm() {
       var _this = this;
 
-      // this.send = true;
-      // if (this.showCheck && this.showEmpty) {
-      console.log('send data');
-      this.error = 'Отправка письма, пожалуйста подождите...';
-      var caption = 'Отправить заявку';
-      var data = {};
+      if (this.check === true && this.showEmpty === false) {
+        console.log('send data');
+        this.error = 'Отправка письма, пожалуйста подождите...';
+        var caption = 'Отправить заявку';
+        var data = {};
 
-      if (this.showFormCall) {
-        caption = 'Заказать звонок';
-        data = {
-          'name': this.name,
-          'phone': this.phone,
-          'caption': caption
-        };
-      } else {
-        data = {
-          'name': this.name,
-          'phone': this.phone,
-          'email': this.email,
-          'message': this.message,
-          'caption': caption
-        };
+        if (this.showFormCall) {
+          caption = 'Заказать звонок';
+          data = {
+            'name': this.name,
+            'phone': this.phone,
+            'caption': caption
+          };
+        } else {
+          data = {
+            'name': this.name,
+            'phone': this.phone,
+            'email': this.email,
+            'message': this.message,
+            'caption': caption
+          };
+        }
+
+        axios.post('/send_order', data).then(function (response) {
+          console.log('send order data');
+          _this.success = response.data.success;
+          _this.error = response.data.error;
+          _this.resultSend = response.data.result;
+          _this.send = false;
+          location.href = '/spasibo';
+        })["catch"](function (e) {
+          console.log('Error send data', e);
+          _this.error = 'Ошибка при отправлении: ' + e;
+        });
       }
-
-      axios.post('/send_order', data).then(function (response) {
-        console.log('send order data');
-        _this.success = response.data.success;
-        _this.error = response.data.error;
-        _this.resultSend = response.data.result;
-        _this.send = false;
-        location.href = '/spasibo';
-      })["catch"](function (e) {
-        console.log('Error send data', e);
-        _this.error = 'Ошибка при отправлении: ' + e;
-      }); // }
     }
   }
 });

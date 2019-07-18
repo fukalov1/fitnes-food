@@ -62,7 +62,14 @@ const app = new Vue({
 
     },
     watch: {
-
+        check: function (val) {
+            if (val===false)
+                this.send = true;
+        },
+        showEmpty: function (val) {
+            if (val===false)
+                this.send = true;
+        }
     },
     methods: {
         checkForm() {
@@ -75,8 +82,7 @@ const app = new Vue({
             }
         },
         sendForm() {
-            // this.send = true;
-            // if (this.showCheck && this.showEmpty) {
+            if (this.check===true && this.showEmpty===false) {
                 console.log('send data');
                 this.error = 'Отправка письма, пожалуйста подождите...';
                 let caption = 'Отправить заявку';
@@ -102,7 +108,7 @@ const app = new Vue({
                         console.log('Error send data', e);
                         this.error = 'Ошибка при отправлении: '+e;
                     });
-            // }
+            }
         }
     }
 });
