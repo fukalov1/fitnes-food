@@ -25,6 +25,7 @@
     "webpack-cli": "^3.3.5"
   },
   "dependencies": {
-    "vue-scrollto": "^2.15.0"
+    "vue-scrollto": "^2.15.0",
+    "vue-the-mask": "^0.11.1"
   }
 }

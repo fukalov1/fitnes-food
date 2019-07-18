@@ -1,4 +1,5 @@
 import 'axios';
+import VueTheMask from 'vue-the-mask'
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -14,6 +15,7 @@ window.axios = require('axios');
 Vue.use(VueScrollTo);
 
 
+Vue.use(VueTheMask)
 
 /**
  * The following block of code may be used to automatically register your

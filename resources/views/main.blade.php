@@ -24,8 +24,8 @@
                 </ul>
                 <form id="send_order" class="" action="#" method="post">
                     <input type="text"v-model="name" placeholder="ФИО">
-                    <input type="text" v-model="phone" class="phone_numb" placeholder="Ваш номер телефона">
-                    <input type="text" v-model="email" class="phone_numb" placeholder="Ваш email" v-if="showFormOrder">
+                    <input type="tel" v-mask="'+7(###)###-####'" v-model="phone" class="phone_numb" placeholder="Ваш номер телефона">
+                    <input type="email" v-model="email" class="phone_numb" placeholder="Ваш email" v-if="showFormOrder">
                     <textarea v-model="message" class="phone_numb" placeholder="Заполните текст заявки" v-if="showFormOrder"></textarea>
                     <div class="_middle">
                         <input type="checkbox" class="form-control" v-model="check" />
