@@ -53,40 +53,51 @@ const app = new Vue({
     },
     computed: {
         showCheck: function () {
-            let result = true;
-            if (this.check===false && this.send)
+            let result = true
+            if (this.check===false)
                 result = false
             return result;
         },
         showEmpty: function () {
-            let result = true;
-            if ((this.name==='' ||this.phone=='') && this.send)
+            let result = true
+            if (this.name==='' ||this.phone=='')
                 result = false
             return result;
         },
 
     },
     watch: {
-        send: function (val) {
-            if (val && this.showCheck && this.showEmpty) {
+
+    },
+    methods: {
+        sendForm() {
+            // this.send = true;
+            if (this.showCheck && this.showEmpty) {
                 console.log('send data');
                 this.error = 'Отправка письма, пожалуйста подождите...';
                 let caption = 'Отправить заявку';
-                if (this.showFormCall)
+                let data = {};
+                if (this.showFormCall) {
                     caption = 'Заказать звонок';
-                axios.post('/send_order', {'name': this.name, 'phone': this.phone, 'caption': caption})
+                    data = {'name': this.name, 'phone': this.phone, 'caption': caption};
+                }
+                else {
+                    data ={'name': this.name, 'phone': this.phone,  'email': this.email, 'message': this.message, 'caption': caption};
+                }
+
+                axios.post('/send_order', data)
                     .then((response) => {
-                    console.log('send order data');
-                    this.success = response.data.success;
-                    this.error = response.data.error;
-                    this.resultSend = response.data.result;
-                    this.send = false;
-                    location.href = '/spasibo';
-                })
-                .catch( e =>  {
-                    console.log('Error send data', e);
-                    this.error = 'Ошибка при отправлении: '+e;
-                });
+                        console.log('send order data');
+                        this.success = response.data.success;
+                        this.error = response.data.error;
+                        this.resultSend = response.data.result;
+                        this.send = false;
+                        location.href = '/spasibo';
+                    })
+                    .catch( e =>  {
+                        console.log('Error send data', e);
+                        this.error = 'Ошибка при отправлении: '+e;
+                    });
             }
         }
     }

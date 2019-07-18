@@ -28,10 +28,10 @@
                     <input type="text" v-model="email" class="phone_numb" placeholder="Ваш email" v-if="showFormOrder">
                     <textarea v-model="message" class="phone_numb" placeholder="Заполните текст заявки" v-if="showFormOrder"></textarea>
                     <div class="_middle">
-                        <input type="checkbox" id="check" class="form-control" v-model="check" />
+                        <input type="checkbox" class="form-control" v-model="check" />
                         <label for="check">Согласие на обработку персональных данных</label>
                     </div>
-                    <button type="button" @click="send=true">ОТПРАВИТЬ</button>
+                    <button type="button" @click="sendForm">ОТПРАВИТЬ</button>
                 </form>
             </div>
             <div class="about-page-form-item" v-if="success===false && error != ''">

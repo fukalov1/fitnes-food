@@ -49573,29 +49573,44 @@ var app = new Vue({
   computed: {
     showCheck: function showCheck() {
       var result = true;
-      if (this.check === false && this.send) result = false;
+      if (this.check === false) result = false;
       return result;
     },
     showEmpty: function showEmpty() {
       var result = true;
-      if ((this.name === '' || this.phone == '') && this.send) result = false;
+      if (this.name === '' || this.phone == '') result = false;
       return result;
     }
   },
-  watch: {
-    send: function send(val) {
+  watch: {},
+  methods: {
+    sendForm: function sendForm() {
       var _this = this;
 
-      if (val && this.showCheck && this.showEmpty) {
+      if (this.showCheck && this.showEmpty) {
         console.log('send data');
         this.error = 'Отправка письма, пожалуйста подождите...';
         var caption = 'Отправить заявку';
-        if (this.showFormCall) caption = 'Заказать звонок';
-        axios.post('/send_order', {
-          'name': this.name,
-          'phone': this.phone,
-          'caption': caption
-        }).then(function (response) {
+        var data = {};
+
+        if (this.showFormCall) {
+          caption = 'Заказать звонок';
+          data = {
+            'name': this.name,
+            'phone': this.phone,
+            'caption': caption
+          };
+        } else {
+          data = {
+            'name': this.name,
+            'phone': this.phone,
+            'email': this.email,
+            'message': this.message,
+            'caption': caption
+          };
+        }
+
+        axios.post('/send_order', data).then(function (response) {
           console.log('send order data');
           _this.success = response.data.success;
           _this.error = response.data.error;
