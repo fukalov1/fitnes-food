@@ -77,7 +77,7 @@
                 @foreach($pages as $page)
                     <li class="nav-item">
                         @if($page->id == 1)
-                            <a class="nav-link  dropdown-toggle" href="#" id="navbarDropdown{{ $page->id }}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown{{ $page->id }}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 {!! $page->name  !!}
                             </a>
                         @elseif($page->redirect=='')

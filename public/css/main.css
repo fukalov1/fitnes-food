@@ -700,3 +700,6 @@ footer .header-main{
 .navbar-expand-lg .navbar-nav .dropdown-menu {
 	left: 35%;
 }
+.nav-item {
+	text-align: center;
+}
