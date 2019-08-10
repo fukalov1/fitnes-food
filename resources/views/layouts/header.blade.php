@@ -39,43 +39,67 @@
             </div>
         </div>
     </div>
-    <div class="header-navig" id="flexmenu">
-        {{--<ul>--}}
-            {{--@foreach($pages as $page)--}}
-                {{--<li>--}}
-                    {{--@if($page->redirect=='')--}}
-                        {{--<a href='/{{ $page->url }}'>{!! $page->name  !!} </a>--}}
-                    {{--@else--}}
-                        {{--<a href='/{{ $page->redirect }}'>{!! $page->name  !!} </a>--}}
-                    {{--@endif--}}
-                {{--</li>--}}
-            {{--@endforeach--}}
-        {{--</ul>--}}
+    {{--<div class="header-navig" id="flexmenu">--}}
+    {{--<ul id="main-menu">--}}
+    {{--@foreach($pages as $page)--}}
+    {{--<li>--}}
+    {{--@if($page->redirect=='')--}}
+    {{--<a href='/{{ $page->url }}'>{!! $page->name  !!} </a>--}}
+    {{--@else--}}
+    {{--<a href='/{{ $page->redirect }}'>{!! $page->name  !!} </a>--}}
+    {{--@endif--}}
+    {{--@if ($page->relation)--}}
+    {{--<ul class="sub-menu">--}}
+    {{--@foreach($page->sub_pages as $sub_page)--}}
+    {{--<li>--}}
+    {{--@if($sub_page->redirect=='')--}}
+    {{--<a href='/{{ $sub_page->url }}'>{{ $sub_page->name }}</a>--}}
+    {{--@else--}}
+    {{--<a href='/{{ $sub_page->redirect }}'>{{ $sub_page->name }}</a>--}}
+    {{--@endif--}}
+    {{--</li>--}}
+    {{--@endforeach--}}
+    {{--</ul>--}}
+    {{--@endif--}}
+    {{--</li>--}}
+    {{--@endforeach--}}
+    {{--</ul>--}}
+    {{--</div>--}}
 
-        <ul id="main-menu">
-            @foreach($pages as $page)
-                <li>
-                    @if($page->redirect=='')
-                        <a href='/{{ $page->url }}'>{!! $page->name  !!} </a>
-                    @else
-                        <a href='/{{ $page->redirect }}'>{!! $page->name  !!} </a>
-                    @endif
-                    @if ($page->relation)
-                        <ul class="sub-menu">
-                            @foreach($page->sub_pages as $sub_page)
-                                <li>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-menu">
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1" aria-controls="navbar1" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse  justify-content-center" id="navbar1">
+            <ul class="navbar-nav">
+                @foreach($pages as $page)
+                    <li class="nav-item">
+                        @if($page->id == 1)
+                            <a class="nav-link  dropdown-toggle" href="#" id="navbarDropdown{{ $page->id }}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                {!! $page->name  !!}
+                            </a>
+                        @elseif($page->redirect=='')
+                            <a class="nav-link active" href="/{{ $page->url }}" id="navbarDropdown{{ $page->id }}">{!! $page->name  !!}</a>
+                        @else
+                            <a class="nav-link active" href="/{{ $page->redirect }}" id="navbarDropdown{{ $page->id }}">{!! $page->name  !!}</a>
+                        @endif
+                        @if ($page->relation)
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown{{ $page->id }}">
+                                @foreach($page->sub_pages as $sub_page)
                                     @if($sub_page->redirect=='')
-                                        <a href='/{{ $sub_page->url }}'>{{ $sub_page->name }}</a>
+                                        <a  class="dropdown-item" href='/{{ $sub_page->url }}'>{{ $sub_page->name }}</a>
                                     @else
-                                        <a href='/{{ $sub_page->redirect }}'>{{ $sub_page->name }}</a>
+                                        <a  class="dropdown-item" href='/{{ $sub_page->redirect }}'>{{ $sub_page->name }}</a>
                                     @endif
-                                </li>
-                            @endforeach
-                        </ul>
-                    @endif
-                </li>
-            @endforeach
-        </ul>
-    </div>
-</header>
+                                @endforeach
+                            </div>
+                        @endif
+                    </li>
+                @endforeach
+            </ul>
 
+        </div>
+    </nav>
+</header>
