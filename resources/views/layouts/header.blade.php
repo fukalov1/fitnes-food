@@ -66,7 +66,7 @@
     {{--</ul>--}}
     {{--</div>--}}
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-menu">
+    <nav class="navbar navbar-expand-lg navbar-dark justify-content-center bg-menu">
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1" aria-controls="navbar1" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
